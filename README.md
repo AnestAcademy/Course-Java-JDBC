@@ -1,1 +1,1 @@
-# Course-Java-JDBC
+# Course-JavaCore-JDBC
