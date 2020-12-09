@@ -1,6 +1,5 @@
 # Course-JavaCore-JDBC
-
-##  
+ 
 
 © Copyright
 > ANEST LEARNING  
