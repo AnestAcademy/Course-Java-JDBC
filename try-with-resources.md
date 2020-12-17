@@ -87,7 +87,7 @@ Khi bạn khai báo bất kỳ tài nguyên implements `AutoCloseable` nào tron
 
 ## Ví dụ với JDBC
 
-Sau đây chúng ta sẽ cùng sử dụng `try-with-resources` để làm việc với Connection, PreparedStatement, ResultSet
+Sau đây chúng ta sẽ cùng sử dụng `try-with-resources` để làm việc với **Connection**, **PreparedStatement**, **ResultSet**
 
 Đầu tiên chúng ta xem qua các interface
 
