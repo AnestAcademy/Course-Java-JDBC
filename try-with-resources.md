@@ -72,6 +72,7 @@ Khi bạn khai báo bất kỳ tài nguyên implements `AutoCloseable` nào tron
 
 * Trước java 7, chúng ta phải sử dụng các khối `finally` để dọn dẹp các tài nguyên. Từ java 7, chúng ta nên sử dụng `try-with-resource`.
 * Với java 7, không cần dọn dẹp tài nguyên rõ ràng. Nó sẽ được thực hiện tự động. Tự động dọn dẹp tài nguyên được thực hiện khi khởi tạo tài nguyên trong khối `try-with-resources` theo cú pháp:
+
     ```java
         try (...) {
             ...
