@@ -1,12 +1,16 @@
-```java
-config.properties
+`config.properties`
 
+```java
 db.host=localhost
 db.port=1433
 db.name=test
 db.user=sa
 db.password=12345678
 ```
+
+<br />
+
+`ConnectURL.java`
 
 ```java
 package config;
@@ -61,6 +65,10 @@ public class ConnectURL {
 }
 ```
 
+<br />
+
+`Main.java`
+
 ```java
 package main;
 
@@ -88,8 +96,7 @@ public class Main {
             // Iterate through the data in the result set and display it.
             while (rs.next()) {
                 System.out.format("%9s %9s\n", rs.getString("username"), rs.getString("password"));
-            }
-            
+            }            
         } catch (SQLException e) {
             e.printStackTrace();
         }
