@@ -111,11 +111,13 @@ public interface PreparedStatement extends Statement {}
 public interface ResultSet extends Wrapper, AutoCloseable {}
 ```
 
-Nhìn qua chúng ta đều thấy Connection, PreparedStatement, ResultSet implements AutoCloseable, có nghĩa là chúng đều sử dụng được với `try-with-resources`.
+<br />
+
+Nhìn qua chúng ta đều thấy **Connection**, **PreparedStatement**, **ResultSet** implements **AutoCloseable**, có nghĩa là chúng đều sử dụng được với `try-with-resources`.
 
 Đầu tiên chúng ta tạo lớp `MSSQLConnection.java` với phương thức `getConnection()` trả về một `Connection`.
 
-Sau đó sử dụng `try-with-resources` để lấy danh sách Products theo ví dụ sau:
+Sau đó sử dụng `try-with-resources` để lấy danh sách **Products** theo ví dụ sau:
 ```java
 public List<Product> getAllProducts() {
  
