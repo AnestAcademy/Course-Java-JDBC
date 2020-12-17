@@ -72,9 +72,11 @@ Khi bạn khai báo bất kỳ tài nguyên implements `AutoCloseable` nào tron
 
 * Trước java 7, chúng ta phải sử dụng các khối `finally` để dọn dẹp các tài nguyên. Từ java 7, chúng ta nên sử dụng `try-with-resource`.
 * Với java 7, không cần dọn dẹp tài nguyên rõ ràng. Nó sẽ được thực hiện tự động. Tự động dọn dẹp tài nguyên được thực hiện khi khởi tạo tài nguyên trong khối `try-with-resources` theo cú pháp:
-```java
-    try(...){...}
-```
+    ```java
+        try (...) {
+            ...
+        }
+    ```
 * Dọn dẹp tài nguyên xảy ra vì interface `AutoCloseable` mới. Phương thức `close()` của nó được gọi bởi JVM ngay khi khối `try` kết thúc.
 * Nếu bạn muốn sử dụng `try-with-resources` với custom resources, thì việc implementing `AutoCloseable` interface là bắt buộc. Nếu không chương trình sẽ không biên dịch.
 * Bạn không được phép gọi phương thức `close()` khi đã sử dụng `try-with-resources`. Điều này nên được gọi tự động bởi JVM. Gọi nó theo cách thủ công có thể gây ra kết quả không mong muốn.
