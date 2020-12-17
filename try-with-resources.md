@@ -93,7 +93,7 @@ Sau đây chúng ta sẽ cùng sử dụng `try-with-resources` để làm việ
 
 `Connection`
 ```java
-public interface Connection  extends Wrapper, AutoCloseable {}
+public interface Connection extends Wrapper, AutoCloseable {}
 ```
 
 `Statement`
