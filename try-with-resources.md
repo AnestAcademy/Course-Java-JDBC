@@ -139,11 +139,14 @@ public List<Product> getAllProducts() {
     return null;
 }
 ```
-`ResultSet` không cần phải khởi tạo trong khối `try` vì: Một đối tượng `ResultSet` được tự động đóng bởi đối tượng `Statement` đã sinh ra nó khi đối tượng `Statement` được đóng lại, được thực thi lại, hoặc được sử dụng để lấy kết quả kế tiếp từ một chuỗi các kết quả.
 
-References: [ResultSet - close()](https://docs.oracle.com/javase/7/docs/api/java/sql/ResultSet.html#close%28%29)
+`ResultSet` không cần phải khởi tạo trong khối `try` vì: 
+
+> Một đối tượng `ResultSet` được tự động đóng bởi đối tượng `Statement` đã sinh ra nó khi đối tượng `Statement` được đóng lại, được thực thi lại, hoặc được sử dụng để lấy kết quả kế tiếp từ một chuỗi các kết quả.
+
 
 ## References
+* [ResultSet - close()](https://docs.oracle.com/javase/7/docs/api/java/sql/ResultSet.html#close%28%29)
 * [The try-with-resources Statement](https://docs.oracle.com/javase/tutorial/essential/exceptions/tryResourceClose.html)
 * [Interface AutoCloseable](https://docs.oracle.com/javase/7/docs/api/java/lang/AutoCloseable.html)
 
