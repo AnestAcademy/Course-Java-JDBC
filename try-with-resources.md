@@ -1,8 +1,12 @@
 # try-with-resources [Automatic Resource Management]
 
+<br />
+
 `try-with-resources` là một tính năng mới trong Java 7, nó giúp chúng ta tự động dọn dẹp các tài nguyên (`resources` - Tài nguyên là một đối tượng phải được đóng `closed` sau khi chương trình kết thúc công việc với nó) sau khi sử dụng, cắt giảm số dòng code và làm cho code hiệu quả hơn. Bất kỳ đối tượng nào implements `java.lang.AutoCloseable`, bao gồm tất cả các đối tượng implement `java.io.Closeable`, có thể được sử dụng như một tài nguyên (`resources`).
 
 Cụ thể chúng ta sẽ đi vào tìm hiều trong bài viết sau.
+
+<br />
 
 ## Cách dọn dẹp tài nguyên cũ (Trước java 7)
 
@@ -32,6 +36,9 @@ finally {
 Khối `finally` dùng để viết mã dọn dẹp các tài nguyên sau khi khối `try` hoàn thành bình thường hoặc dừng đột ngột (Throw Exception). Đây là cách phổ biến thường dùng, nhưng khối `finally` sẽ trở nên dài và trông xấu hơn khi bạn có nhiều tài nguyên hơn cần dọn dẹp và xử lý. 
 
 #### Java 7 giải quyết vấn đề này với tính năng try-with-resources.
+
+<br />
+
 ## try-with-resources
 
 Bây giờ hãy xem cách mở và đóng tài nguyên mới trong java 7
@@ -47,6 +54,8 @@ try (BufferedReader br = new BufferedReader(new FileReader("C:/temp/test.txt")))
 ```
 Bây giờ tài nguyên `BufferedReader` sẽ được khai báo trong dấu ngoặc đơn ngay sau từ khóa `try`. Khối `finally` đã được lược bỏ (không cần thiết nữa). `try-with-resources` đảm bảo rằng mỗi tài nguyên sẽ được đóng ở cuối câu lệnh `try`.
 
+<br />
+
 ## Cách thức hoạt động
 
 Trong java 7, chúng ta có một super interface `java.lang.AutoCloseable` mới. Interface  này có một phương thức:
@@ -56,6 +65,8 @@ void close() throws Exception;
 Tài liệu Java khuyên bạn nên implements interface này trên bất kỳ tài nguyên nào cần phải `close()` sau khi không cần dùng nữa.
 
 Khi bạn khai báo bất kỳ tài nguyên implements `AutoCloseable` nào trong khối `try-with-resource`, ngay sau khi kết thúc khối `try`, JVM gọi phương thức `close()` này trên tất cả các tài nguyên được khởi tạo trong khối `try()`.
+
+<br />
 
 ## Những điểm tóm tắt chính
 
@@ -68,6 +79,8 @@ Khi bạn khai báo bất kỳ tài nguyên implements `AutoCloseable` nào tron
 * Nếu bạn muốn sử dụng `try-with-resources` với custom resources, thì việc implementing `AutoCloseable` interface là bắt buộc. Nếu không chương trình sẽ không biên dịch.
 * Bạn không được phép gọi phương thức `close()` khi đã sử dụng `try-with-resources`. Điều này nên được gọi tự động bởi JVM. Gọi nó theo cách thủ công có thể gây ra kết quả không mong muốn.
 * Một câu lệnh `try-with-resources` có thể có `catch` và `finally` cũng giống như một câu lệnh `try` thông thường. Trong một câu lệnh `try-with-resources`, bất kỳ khối `catch` hoặc `finally` nào đều được chạy sau khi các tài nguyên được khai báo đã được đóng.
+
+<br />
 
 ## Ví dụ với JDBC
 
@@ -128,3 +141,12 @@ References: [ResultSet - close()](https://docs.oracle.com/javase/7/docs/api/java
 ## References
 * [The try-with-resources Statement](https://docs.oracle.com/javase/tutorial/essential/exceptions/tryResourceClose.html)
 * [Interface AutoCloseable](https://docs.oracle.com/javase/7/docs/api/java/lang/AutoCloseable.html)
+
+<br />
+
+##  
+
+© Copyright
+> ANEST LEARNING  
+> Join us: &nbsp;&nbsp;&nbsp; [Facebook groups](https://www.facebook.com/groups/anest.learning/)  
+> Website: &nbsp; [https://anest.dev](https://anest.dev)  
